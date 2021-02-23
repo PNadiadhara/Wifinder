@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF5301CD25E59BF600FD5592 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301CC25E59BF600FD5592 /* NetworkHelper.swift */; };
 		BF5301D225E59D7E00FD5592 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301D125E59D7E00FD5592 /* AppError.swift */; };
+		BF5301DE25E5AB4000FD5592 /* Hotspot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301DD25E5AB4000FD5592 /* Hotspot.swift */; };
+		BF5301E425E5AC6D00FD5592 /* HotspotAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301E325E5AC6D00FD5592 /* HotspotAPIClient.swift */; };
 		BFE57C9D25E59786004B28D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57C9C25E59786004B28D4 /* AppDelegate.swift */; };
 		BFE57C9F25E59786004B28D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */; };
 		BFE57CA125E59786004B28D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57CA025E59786004B28D4 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		BF5301CC25E59BF600FD5592 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		BF5301D125E59D7E00FD5592 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		BF5301DD25E5AB4000FD5592 /* Hotspot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotspot.swift; sourceTree = "<group>"; };
+		BF5301E325E5AC6D00FD5592 /* HotspotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotAPIClient.swift; sourceTree = "<group>"; };
 		BFE57C9925E59786004B28D4 /* NYCWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE57C9C25E59786004B28D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,8 +89,17 @@
 			children = (
 				BF5301CC25E59BF600FD5592 /* NetworkHelper.swift */,
 				BF5301D125E59D7E00FD5592 /* AppError.swift */,
+				BF5301E325E5AC6D00FD5592 /* HotspotAPIClient.swift */,
 			);
 			path = "Network Helper";
+			sourceTree = "<group>";
+		};
+		BF5301E225E5AB7E00FD5592 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF5301DD25E5AB4000FD5592 /* Hotspot.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BFE57C9025E59786004B28D4 = {
@@ -113,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE57C9C25E59786004B28D4 /* AppDelegate.swift */,
+				BF5301E225E5AB7E00FD5592 /* Model */,
 				BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */,
 				BFE57CA025E59786004B28D4 /* ViewController.swift */,
 				BF5301D625E59D8600FD5592 /* Network Helper */,
@@ -274,7 +288,9 @@
 			files = (
 				BF5301CD25E59BF600FD5592 /* NetworkHelper.swift in Sources */,
 				BFE57CA125E59786004B28D4 /* ViewController.swift in Sources */,
+				BF5301E425E5AC6D00FD5592 /* HotspotAPIClient.swift in Sources */,
 				BF5301D225E59D7E00FD5592 /* AppError.swift in Sources */,
+				BF5301DE25E5AB4000FD5592 /* Hotspot.swift in Sources */,
 				BFE57C9D25E59786004B28D4 /* AppDelegate.swift in Sources */,
 				BFE57C9F25E59786004B28D4 /* SceneDelegate.swift in Sources */,
 			);
