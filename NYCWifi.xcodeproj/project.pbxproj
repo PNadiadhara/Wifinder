@@ -13,9 +13,12 @@
 		BF5301E425E5AC6D00FD5592 /* HotspotAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301E325E5AC6D00FD5592 /* HotspotAPIClient.swift */; };
 		BF5301EC25E5B27E00FD5592 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301EB25E5B27E00FD5592 /* DataPersistenceManager.swift */; };
 		BF5301F225E5B2F100FD5592 /* HotspotDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301F125E5B2F100FD5592 /* HotspotDataManager.swift */; };
+		BF5301FA25E5BC6900FD5592 /* HotspotCacheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5301F925E5BC6900FD5592 /* HotspotCacheDataManager.swift */; };
+		BF53020425E5CE0600FD5592 /* MainMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53020325E5CE0600FD5592 /* MainMapView.swift */; };
+		BF53020925E5D37900FD5592 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53020825E5D37900FD5592 /* ColorExtension.swift */; };
 		BFE57C9D25E59786004B28D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57C9C25E59786004B28D4 /* AppDelegate.swift */; };
 		BFE57C9F25E59786004B28D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */; };
-		BFE57CA125E59786004B28D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57CA025E59786004B28D4 /* ViewController.swift */; };
+		BFE57CA125E59786004B28D4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57CA025E59786004B28D4 /* MapViewController.swift */; };
 		BFE57CA425E59786004B28D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE57CA225E59786004B28D4 /* Main.storyboard */; };
 		BFE57CA625E5978A004B28D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFE57CA525E5978A004B28D4 /* Assets.xcassets */; };
 		BFE57CA925E5978A004B28D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFE57CA725E5978A004B28D4 /* LaunchScreen.storyboard */; };
@@ -47,10 +50,13 @@
 		BF5301E325E5AC6D00FD5592 /* HotspotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotAPIClient.swift; sourceTree = "<group>"; };
 		BF5301EB25E5B27E00FD5592 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		BF5301F125E5B2F100FD5592 /* HotspotDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotDataManager.swift; sourceTree = "<group>"; };
+		BF5301F925E5BC6900FD5592 /* HotspotCacheDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotspotCacheDataManager.swift; sourceTree = "<group>"; };
+		BF53020325E5CE0600FD5592 /* MainMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapView.swift; sourceTree = "<group>"; };
+		BF53020825E5D37900FD5592 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		BFE57C9925E59786004B28D4 /* NYCWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE57C9C25E59786004B28D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BFE57CA025E59786004B28D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFE57CA025E59786004B28D4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BFE57CA325E59786004B28D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFE57CA525E5978A004B28D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFE57CA825E5978A004B28D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,8 +117,34 @@
 			children = (
 				BF5301EB25E5B27E00FD5592 /* DataPersistenceManager.swift */,
 				BF5301F125E5B2F100FD5592 /* HotspotDataManager.swift */,
+				BF5301F925E5BC6900FD5592 /* HotspotCacheDataManager.swift */,
 			);
 			path = "Data Persistence";
+			sourceTree = "<group>";
+		};
+		BF5301FE25E5C34D00FD5592 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFE57CA025E59786004B28D4 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF53020225E5CDCB00FD5592 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF53020325E5CE0600FD5592 /* MainMapView.swift */,
+			);
+			name = View;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF53020D25E5D38C00FD5592 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BF53020825E5D37900FD5592 /* ColorExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		BFE57C9025E59786004B28D4 = {
@@ -139,9 +171,11 @@
 			isa = PBXGroup;
 			children = (
 				BFE57C9C25E59786004B28D4 /* AppDelegate.swift */,
-				BF5301E225E5AB7E00FD5592 /* Model */,
 				BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */,
-				BFE57CA025E59786004B28D4 /* ViewController.swift */,
+				BF53020D25E5D38C00FD5592 /* Extension */,
+				BF5301E225E5AB7E00FD5592 /* Model */,
+				BF53020225E5CDCB00FD5592 /* View */,
+				BF5301FE25E5C34D00FD5592 /* Controller */,
 				BF5301D625E59D8600FD5592 /* Network Helper */,
 				BFE57CA225E59786004B28D4 /* Main.storyboard */,
 				BFE57CA525E5978A004B28D4 /* Assets.xcassets */,
@@ -300,10 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF53020925E5D37900FD5592 /* ColorExtension.swift in Sources */,
 				BF5301CD25E59BF600FD5592 /* NetworkHelper.swift in Sources */,
 				BF5301EC25E5B27E00FD5592 /* DataPersistenceManager.swift in Sources */,
-				BFE57CA125E59786004B28D4 /* ViewController.swift in Sources */,
+				BF53020425E5CE0600FD5592 /* MainMapView.swift in Sources */,
+				BFE57CA125E59786004B28D4 /* MapViewController.swift in Sources */,
 				BF5301E425E5AC6D00FD5592 /* HotspotAPIClient.swift in Sources */,
+				BF5301FA25E5BC6900FD5592 /* HotspotCacheDataManager.swift in Sources */,
 				BF5301D225E59D7E00FD5592 /* AppError.swift in Sources */,
 				BF5301DE25E5AB4000FD5592 /* Hotspot.swift in Sources */,
 				BFE57C9D25E59786004B28D4 /* AppDelegate.swift in Sources */,
