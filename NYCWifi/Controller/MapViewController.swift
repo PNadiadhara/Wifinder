@@ -63,6 +63,7 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
         checkLocationServices()
         loadHotspots()
+        setupKeyboardToolbar()
     }
     
     func updateResultsWithinRadiusOfCurrentLocation(myLocation : CLLocation) {
@@ -126,7 +127,7 @@ class MapViewController: UIViewController {
     }
     
     func checkLocationServices() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+        if CLAuthorizationStatus.authorizedWhenInUse == .authorizedWhenInUse {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
             mainView.mapView.showsUserLocation = true
@@ -136,6 +137,19 @@ class MapViewController: UIViewController {
             locationManager.startUpdatingLocation()
             mainView.mapView.showsUserLocation = true
         }
+    }
+    
+    private func setupKeyboardToolbar() {
+        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done
+            , target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        mainView.search.inputAccessoryView = toolbar
+    }
+    @objc private func doneButtonAction() {
+        self.view.endEditing(true)
     }
 }
 
@@ -164,7 +178,22 @@ extension MapViewController: MKMapViewDelegate {
 
 //MARK: - LocationManager Extention
 extension MapViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            searchCoordinates = myCurrentArea.center
+        }
+        let currentArea = MKCoordinateRegion(center: searchCoordinates, latitudinalMeters: 500, longitudinalMeters: 500)
+        mainView.mapView.setRegion(currentArea, animated: true)
+    }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        myCurrentArea = MKCoordinateRegion()
+        if let currentLocation = locations.last {
+            myCurrentArea = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        } else {
+            myCurrentArea = MKCoordinateRegion(center: searchCoordinates, latitudinalMeters: 500, longitudinalMeters: 500)
+        }
+    }
 }
 
 
