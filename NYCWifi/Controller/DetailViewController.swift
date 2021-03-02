@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import AudioToolbox
 
 class DetailViewController: UIViewController {
 
@@ -15,7 +16,15 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(detailView)
+        if hotspot.remarks != "" {
+            detailView.infoTextView.text = "Name:\n\(hotspot.locationName)\n\nAddress:\n\(hotspot.address)\n \(hotspot.city), NY \(hotspot.zipcode)\n\nSSID:\n\(hotspot.ssid)\n\nRemarks:\n\(hotspot.remarks)"
+        } else {
+            detailView.infoTextView.text = "Name:\n\(hotspot.locationName)\n\nAddress:\n\(hotspot.address)\n \(hotspot.city), NY \(hotspot.zipcode)\n\nSSID:\n\(hotspot.ssid)"
+        }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "•••", style: .plain, target: self, action: #selector(showActionAlert))
+        setupMap()
         
     }
     
@@ -46,6 +55,22 @@ class DetailViewController: UIViewController {
         }
     }
    
+    private func screenShotButtonPressed() {
+        var screenShotImage: UIImage!
+        let layer = UIApplication.shared.keyWindow?.layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else {return}
+        layer?.render(in: context)
+        screenShotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenShotImage {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            AudioServicesPlaySystemSound(1108)
+            showAlert(title: nil, message: "Image Saved", actionTitle: "OK")
+            
+        }
+    }
 
 }
 
