@@ -19,6 +19,7 @@
 		BF53021525E99E9900FD5592 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53021425E99E9900FD5592 /* DetailView.swift */; };
 		BF53021A25E9A9D800FD5592 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53021925E9A9D800FD5592 /* SavedView.swift */; };
 		BF53021F25ED865A00FD5592 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53021E25ED865A00FD5592 /* DetailViewController.swift */; };
+		BF53022425EDCE7F00FD5592 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53022325EDCE7F00FD5592 /* UIViewController+Alerts.swift */; };
 		BFE57C9D25E59786004B28D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57C9C25E59786004B28D4 /* AppDelegate.swift */; };
 		BFE57C9F25E59786004B28D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */; };
 		BFE57CA125E59786004B28D4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE57CA025E59786004B28D4 /* MapViewController.swift */; };
@@ -59,6 +60,7 @@
 		BF53021425E99E9900FD5592 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BF53021925E9A9D800FD5592 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		BF53021E25ED865A00FD5592 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BF53022325EDCE7F00FD5592 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		BFE57C9925E59786004B28D4 /* NYCWifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYCWifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFE57C9C25E59786004B28D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFE57C9E25E59786004B28D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				BF53020825E5D37900FD5592 /* ColorExtension.swift */,
+				BF53022325EDCE7F00FD5592 /* UIViewController+Alerts.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				BF5301D225E59D7E00FD5592 /* AppError.swift in Sources */,
 				BF5301DE25E5AB4000FD5592 /* Hotspot.swift in Sources */,
 				BF53021A25E9A9D800FD5592 /* SavedView.swift in Sources */,
+				BF53022425EDCE7F00FD5592 /* UIViewController+Alerts.swift in Sources */,
 				BFE57C9D25E59786004B28D4 /* AppDelegate.swift in Sources */,
 				BF53021F25ED865A00FD5592 /* DetailViewController.swift in Sources */,
 				BFE57C9F25E59786004B28D4 /* SceneDelegate.swift in Sources */,

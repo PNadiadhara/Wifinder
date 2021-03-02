@@ -31,6 +31,20 @@ class DetailViewController: UIViewController {
         detailView.mapKitView.addAnnotation(annotation)
         
     }
+    
+    @objc private func showActionAlert() {
+        let alert = UIAlertController(title: "Options", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Save Hotspot", style: .default, handler: { (action) in
+            self.saveButtonPressed()
+        }))
+    }
+    
+    private func saveButtonPressed() {
+        if let newHotspot = hotspot {
+         HotspotDataManager.addHotspot(hotspot: newHotspot)
+            showAlert(title: nil, message: "Hotspot Saved", actionTitle: "OK")
+        }
+    }
    
 
 }
