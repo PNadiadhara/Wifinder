@@ -173,7 +173,17 @@ extension MapViewController: UISearchBarDelegate {
 
 //MARK: - MKMapview Extention
 extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        annotationView.markerTintColor = UIColor.init(displayP3Red: 247/255, green: 195/255, blue: 106/255, alpha: 1)
+//TODO: - add UIImage named wifi
+        annotationView.glyphImage = UIImage(named: "wifi")
+        return annotationView
+    }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
+    }
 }
 
 //MARK: - LocationManager Extention
