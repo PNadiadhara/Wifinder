@@ -11,7 +11,7 @@ class LaunchView: UIView {
 
     public lazy var launchImage: UIImageView = {
         let LI = UIImageView()
-        LI.image = UIImage(named: "")
+        LI.image = UIImage(named: "wifinder")
         LI.contentMode = .scaleAspectFit
         return LI
     }()
@@ -23,7 +23,8 @@ class LaunchView: UIView {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        setConstraints()
     }
     
     private func setConstraints() {
