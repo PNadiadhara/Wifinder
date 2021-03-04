@@ -97,7 +97,7 @@ class MapViewController: UIViewController {
                     self.annotations = annotations
                     self.searchAnnotations = annotations
                     DispatchQueue.main.async {
-                       self.mainView.mapView.addAnnotations(self.searchAnnotations)
+                        self.mainView.mapView.addAnnotations(self.searchAnnotations)
                     }
                     
                     let region = MKCoordinateRegion(center: self.searchAnnotations.first!.coordinate, latitudinalMeters: 2400, longitudinalMeters: 2400)
@@ -143,7 +143,7 @@ class MapViewController: UIViewController {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done
-            , target: self, action: #selector(doneButtonAction))
+                                                       , target: self, action: #selector(doneButtonAction))
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()
         mainView.search.inputAccessoryView = toolbar
@@ -182,7 +182,7 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "WiFi Hotspots" 
+        return "WiFi Hotspots"
     }
     
     
@@ -190,7 +190,33 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - SearchBar Extention
 extension MapViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        mainView.mapView.removeAnnotations(searchAnnotations)
+        self.searchHotspots.removeAll()
+        self.searchAnnotations.removeAll()
+        
+        guard let text = searchBar.text, let number = Int(text), text.count == 5 else {
+            showAlert(title: nil, message: "Enter Valid Zipcode", actionTitle: "OK")
+            return
+        }
+        
+        searchHotspots = hotspots.filter{
+            $0.zipcode == String(number)
+        }
+        searchAnnotations = searchHotspots.map {
+            let annotaion = MKPointAnnotation()
+            annotaion.coordinate = CLLocationCoordinate2D(latitude: Double($0.lat) ?? 0.0, longitude: Double($0.long) ?? 0.0)
+            return annotaion
+        }
+    }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            searchHotspots = hotspots
+            searchAnnotations = annotations
+        }
+    }
 }
 
 //MARK: - MKMapview Extention
@@ -198,13 +224,23 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         annotationView.markerTintColor = UIColor.init(displayP3Red: 247/255, green: 195/255, blue: 106/255, alpha: 1)
-//TODO: - add UIImage named wifi
+        //TODO: - add UIImage named wifi
         annotationView.glyphImage = UIImage(named: "wifi")
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        
+        let detailVC = DetailViewController()
+        guard let annotation = view.annotation else {
+            return
+        }
+        let index = hotspots.firstIndex{
+            Double($0.lat) == annotation.coordinate.latitude && Double($0.long) == annotation.coordinate.longitude}
+        if let selectedHotspot = index {
+            let hotspot = hotspots[selectedHotspot]
+            detailVC.hotspot = hotspot
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }
 
