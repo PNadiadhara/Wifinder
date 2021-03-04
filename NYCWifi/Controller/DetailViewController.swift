@@ -42,16 +42,37 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func showActionAlert() {
-        let alert = UIAlertController(title: "Options", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "More Options", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Save Hotspot", style: .default, handler: { (action) in
             self.saveButtonPressed()
         }))
+        alert.addAction(UIAlertAction(title: "Take Screenshot", style: .default, handler: { (action) in
+            self.screenshotButtonPressed()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     private func saveButtonPressed() {
         if let newHotspot = hotspot {
          HotspotDataManager.addHotspot(hotspot: newHotspot)
             showAlert(title: nil, message: "Hotspot Saved", actionTitle: "OK")
+        }
+    }
+    
+    private func screenshotButtonPressed() {
+        var screenShotImage: UIImage!
+        let layer = UIApplication.shared.keyWindow?.layer
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, scale)
+        guard let context = UIGraphicsGetCurrentContext() else  { return }
+        layer?.render(in: context)
+        screenShotImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        if let image = screenShotImage {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            AudioServicesPlaySystemSound(1108);
+            showAlert(title: nil, message: "Image Saved", actionTitle: "OK")
         }
     }
    

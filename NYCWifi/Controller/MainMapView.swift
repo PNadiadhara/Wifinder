@@ -13,6 +13,7 @@ class MainMapView: UIView {
     
     public lazy var search: UISearchBar = {
         let searchbar = UISearchBar()
+        //searchbar.keyboardType = .numberPad
         searchbar.backgroundColor = UIColor.blue.withAlphaComponent(0.1)
         searchbar.layer.cornerRadius = 10
         searchbar.placeholder = "Search By Zipcode"

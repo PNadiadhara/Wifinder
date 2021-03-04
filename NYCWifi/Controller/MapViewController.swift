@@ -150,6 +150,7 @@ class MapViewController: UIViewController {
     }
     @objc private func doneButtonAction() {
         self.view.endEditing(true)
+        self.resignFirstResponder()
     }
 }
 
@@ -190,6 +191,7 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
 
 //MARK: - SearchBar Extention
 extension MapViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         mainView.mapView.removeAnnotations(searchAnnotations)
@@ -217,6 +219,7 @@ extension MapViewController: UISearchBarDelegate {
             searchAnnotations = annotations
         }
     }
+    
 }
 
 //MARK: - MKMapview Extention
