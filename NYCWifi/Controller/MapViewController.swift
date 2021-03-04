@@ -156,11 +156,33 @@ class MapViewController: UIViewController {
 //MARK: - TableView Extention
 extension MapViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return searchHotspots.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell()
+        let hotspotToSet = searchHotspots[indexPath.row]
+        cell.textLabel?.text = hotspotToSet.locationName
+        cell.textLabel?.textAlignment = .center
+        cell.detailTextLabel?.text = hotspotToSet.ssid
+        cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        cell.textLabel?.shadowColor = #colorLiteral(red: 0.9705753922, green: 0.7638127208, blue: 0.4173654318, alpha: 1)
+        cell.textLabel?.shadowOffset = CGSize(width: 0, height: 2)
+        cell.textLabel?.textColor = .black
+        cell.selectionStyle = .none
+        cell.backgroundColor = #colorLiteral(red: 1, green: 0.8813299537, blue: 0.5384758115, alpha: 1)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = DetailViewController()
+        detailVC.hotspot = searchHotspots[indexPath.row]
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "WiFi Hotspots" 
     }
     
     
