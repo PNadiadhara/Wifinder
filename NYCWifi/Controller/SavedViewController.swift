@@ -63,7 +63,7 @@ extension SavedViewController: UITableViewDataSource {
         cell.textLabel?.shadowOffset = CGSize(width: 0, height: 2)
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         cell.textLabel?.textColor = .black
-        cell.textLabel?.shadowColor = #colorLiteral(red: 0.9705753922, green: 0.7638127208, blue: 0.4173654318, alpha: 1)
+        cell.textLabel?.shadowColor = #colorLiteral(red: 0.5019607843, green: 0.9294117647, blue: 0.6, alpha: 1)
         return cell
     }
     

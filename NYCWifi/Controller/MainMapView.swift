@@ -24,7 +24,7 @@ class MainMapView: UIView {
     public lazy var mapView: MKMapView = {
         let map = MKMapView()
         map.layer.cornerRadius = 10.0
-        map.layer.borderColor = #colorLiteral(red: 0.368627451, green: 0.4470588235, blue: 0.9215686275, alpha: 1)
+        map.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.3411764706, blue: 0.4784313725, alpha: 1)
         map.layer.borderWidth = 3
         return map
     }()
@@ -32,8 +32,8 @@ class MainMapView: UIView {
     public lazy var mainTableView: UITableView = {
         var tableview = UITableView()
         tableview = UITableView(frame: .zero, style: .plain)
-        tableview.backgroundColor = #colorLiteral(red: 1, green: 0.8813299537, blue: 0.5384758115, alpha: 1)
-        tableview.sectionIndexColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        tableview.backgroundColor = #colorLiteral(red: 0.7803921569, green: 0.9764705882, blue: 0.8, alpha: 1)
+        tableview.sectionIndexColor = #colorLiteral(red: 0.2196078431, green: 0.6392156863, blue: 0.6470588235, alpha: 1)
         tableview.tableFooterView = UIView()
         return tableview
     }()
@@ -51,7 +51,9 @@ class MainMapView: UIView {
     private func setUpMainViewBG() {
         gradiant = CAGradientLayer()
         gradiant.frame = self.bounds
-        gradiant.colors = [UIColor(displayP3Red: 255/255, green: 140/255, blue: 132/255, alpha: 1).cgColor, UIColor(displayP3Red: 247/255, green: 195/255, blue: 106/255, alpha: 1).cgColor, UIColor(displayP3Red: 255/255, green: 225/255, blue: 137/255, alpha: 1).cgColor]
+        gradiant.colors = [UIColor(displayP3Red: 56/255, green: 163/255, blue: 165/255, alpha: 1).cgColor,
+                           UIColor(displayP3Red: 87/255, green: 204/255, blue: 153/255, alpha: 1).cgColor,
+                           UIColor(displayP3Red: 128/255, green: 237/255, blue: 153/255, alpha: 1).cgColor]
         layer.addSublayer(gradiant)
     }
     

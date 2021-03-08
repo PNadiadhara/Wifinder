@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @objc func dismissLaunchScreen() {
                 window?.rootViewController = MainTabBarController()
                 window?.makeKeyAndVisible()
-               self.window?.tintColor = #colorLiteral(red: 0.9980230927, green: 0.5507860184, blue: 0.5175441504, alpha: 1)
+               self.window?.tintColor = #colorLiteral(red: 0.3411764706, green: 0.8, blue: 0.6, alpha: 1)
     }
 
     

@@ -167,11 +167,11 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.textAlignment = .center
         cell.detailTextLabel?.text = hotspotToSet.ssid
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        cell.textLabel?.shadowColor = #colorLiteral(red: 0.9705753922, green: 0.7638127208, blue: 0.4173654318, alpha: 1)
+        cell.textLabel?.shadowColor = #colorLiteral(red: 0.5019607843, green: 0.9294117647, blue: 0.6, alpha: 1)
         cell.textLabel?.shadowOffset = CGSize(width: 0, height: 2)
         cell.textLabel?.textColor = .black
         cell.selectionStyle = .none
-        cell.backgroundColor = #colorLiteral(red: 1, green: 0.8813299537, blue: 0.5384758115, alpha: 1)
+        cell.backgroundColor = #colorLiteral(red: 0.7803921569, green: 0.9764705882, blue: 0.8, alpha: 1)
         return cell
     }
     
