@@ -14,7 +14,7 @@ class DetailView: UIView {
     public lazy var mapKitView: MKMapView = {
         let mkv = MKMapView()
         mkv.layer.cornerRadius = 10
-        mkv.layer.borderColor = #colorLiteral(red: 1, green: 0.6097013354, blue: 0.4944909215, alpha: 1)
+        mkv.layer.borderColor = #colorLiteral(red: 0.1333333333, green: 0.3411764706, blue: 0.4784313725, alpha: 1)
         mkv.layer.borderWidth = 3
         return mkv
     }()
@@ -43,7 +43,9 @@ class DetailView: UIView {
         backgroundColor = .white
         gradient = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [UIColor(displayP3Red: 255/255, green: 140/255, blue: 132/255, alpha: 1).cgColor, UIColor(displayP3Red: 247/255, green: 195/255, blue: 106/255, alpha: 1).cgColor, UIColor(displayP3Red: 255/255, green: 225/255, blue: 137/255, alpha: 1).cgColor]
+        gradient.colors = [UIColor(displayP3Red: 56/255, green: 163/255, blue: 165/255, alpha: 1).cgColor,
+                           UIColor(displayP3Red: 87/255, green: 204/255, blue: 153/255, alpha: 1).cgColor,
+                           UIColor(displayP3Red: 128/255, green: 237/255, blue: 153/255, alpha: 1).cgColor]
         layer.addSublayer(gradient)
         
     }

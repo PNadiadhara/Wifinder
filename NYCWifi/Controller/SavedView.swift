@@ -31,7 +31,9 @@ class SavedView: UIView {
     private func setUpSaveViewBackground() {
         gradient = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [UIColor(displayP3Red: 255/255, green: 140/255, blue: 132/255, alpha: 1).cgColor, UIColor(displayP3Red: 247/255, green: 195/255, blue: 106/255, alpha: 1).cgColor, UIColor(displayP3Red: 255/255, green: 225/255, blue: 137/255, alpha: 1).cgColor]
+        gradient.colors = [UIColor(displayP3Red: 56/255, green: 163/255, blue: 165/255, alpha: 1).cgColor,
+                           UIColor(displayP3Red: 87/255, green: 204/255, blue: 153/255, alpha: 1).cgColor,
+                           UIColor(displayP3Red: 128/255, green: 237/255, blue: 153/255, alpha: 1).cgColor]
         layer.addSublayer(gradient)
     }
     
