@@ -2,7 +2,7 @@
 
 An app that allows users to find free wifi hotspots in New York City based on zip code or current user location.
 
-  
+![](demo.gif)
 
 
 
