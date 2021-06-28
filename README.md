@@ -23,6 +23,6 @@ License
 MIT
 
 
-https://www.hatchit.io/how-to-make-your-linkedin-profile-stand-out-as-a-software-engineer/
+
 
 
