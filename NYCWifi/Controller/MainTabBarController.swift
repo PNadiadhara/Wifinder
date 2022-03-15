@@ -13,12 +13,12 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         let mapVC = MapViewController()
-//TODO: - UIImage named wifi update
-        mapVC.tabBarItem = UITabBarItem(title: "Map", image: UIImage(named: "Wifi"), tag: 0)
+
+        mapVC.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "wifi.circle.fill"), tag: 0)
         
         let savedVC = SavedViewController()
-//TODO: - UIImage named wifi update
-        savedVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(named: "Saved"), tag: 1)
+
+        savedVC.tabBarItem = UITabBarItem(title: "Saved", image: UIImage(systemName: "list.bullet.rectangle.fill"), tag: 1)
         
         let tabBarLists = [mapVC, savedVC]
         viewControllers = tabBarLists.map(UINavigationController.init)
